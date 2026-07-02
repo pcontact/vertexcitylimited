@@ -4,6 +4,48 @@ const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Team", "Cont
 
 const navHref = (link) => (link === "Home" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`);
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+const easeInOutExpo = (progress) => {
+  if (progress === 0 || progress === 1) {
+    return progress;
+  }
+
+  return progress < 0.5
+    ? Math.pow(2, 20 * progress - 10) / 2
+    : (2 - Math.pow(2, -20 * progress + 10)) / 2;
+};
+
+function scrollToAnchor(hash) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const target = hash === "#" ? document.body : document.querySelector(hash);
+
+  if (!target) {
+    return;
+  }
+
+  const header = document.querySelector("header");
+  const headerOffset = header ? header.getBoundingClientRect().height + 16 : 0;
+  const startY = window.scrollY;
+  const targetY = hash === "#" ? 0 : target.getBoundingClientRect().top + window.scrollY - headerOffset;
+  const distance = targetY - startY;
+  const duration = Math.min(1400, Math.max(720, Math.abs(distance) * 0.62));
+  const startTime = performance.now();
+
+  if (prefersReducedMotion || Math.abs(distance) < 4) {
+    window.scrollTo(0, targetY);
+    return;
+  }
+
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * easeInOutExpo(progress));
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
 
 const services = [
   {
@@ -572,8 +614,29 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  function handleAnchorClick(event) {
+    const anchor = event.target.closest("a[href^='#']");
+
+    if (!anchor) {
+      return;
+    }
+
+    const hash = anchor.getAttribute("href");
+
+    if (!hash) {
+      return;
+    }
+
+    event.preventDefault();
+    scrollToAnchor(hash);
+
+    if (window.history.pushState) {
+      window.history.pushState(null, "", hash);
+    }
+  }
+
   return (
-    <div className="bg-background text-on-background min-h-screen overflow-x-hidden">
+    <div className="bg-background text-on-background min-h-screen overflow-x-hidden" onClick={handleAnchorClick}>
       <Header />
       <main>
         <Hero />
