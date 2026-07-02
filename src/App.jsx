@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Contact"];
 
 const navHref = (link) => (link === "Home" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`);
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 const services = [
   {
@@ -127,7 +128,7 @@ function Header() {
     <header className="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
       <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-3 sm:py-4 max-w-container-max mx-auto">
         <a className="inline-flex items-center gap-3 min-w-0" href="#" aria-label="Vertex City Ltd. home">
-          <img className="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0" src="/images/logo.png" alt="Vertex City Ltd." />
+          <img className="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0" src={assetPath("/images/logo.png")} alt="Vertex City Ltd." />
           <span className="text-lg sm:text-headline-md font-headline-md font-extrabold text-primary whitespace-nowrap">
             Vertex City Ltd.
           </span>
@@ -200,7 +201,7 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/35 sm:bg-gradient-to-r sm:from-primary/75 sm:via-primary/45 sm:to-transparent z-10" />
         <img
           className="w-full h-full object-cover object-[62%_center] sm:object-center"
-          src="/images/vertexcity-draft-hero.png"
+          src={assetPath("/images/vertexcity-draft-hero.png")}
           alt="Modern real estate development representing Vertex City Ltd. property solutions"
         />
       </div>
@@ -377,7 +378,7 @@ function Footer() {
         <div>
           <div className="mb-5 sm:mb-6 flex items-center gap-3 min-w-0">
             <span className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-lg bg-white">
-              <img className="h-12 w-12 sm:h-14 sm:w-14 object-contain" src="/images/logo.png" alt="Vertex City Ltd." />
+              <img className="h-12 w-12 sm:h-14 sm:w-14 object-contain" src={assetPath("/images/logo.png")} alt="Vertex City Ltd." />
             </span>
             <span className="text-xl sm:text-headline-md font-headline-md font-bold text-on-primary">
               Vertex City Ltd.
