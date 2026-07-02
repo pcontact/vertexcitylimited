@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Team", "Contact"];
+const heroSubtitle =
+  "Helping you invest in prime land and property with confidence, flexibility, and expert support.";
 
 const navHref = (link) => (link === "Home" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`);
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
@@ -297,6 +299,35 @@ function Header() {
 }
 
 function Hero() {
+  const [typedSubtitle, setTypedSubtitle] = useState("");
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      setTypedSubtitle(heroSubtitle);
+      return undefined;
+    }
+
+    let index = 0;
+    let typingInterval;
+    const startDelay = window.setTimeout(() => {
+      typingInterval = window.setInterval(() => {
+        index += 1;
+        setTypedSubtitle(heroSubtitle.slice(0, index));
+
+        if (index >= heroSubtitle.length) {
+          window.clearInterval(typingInterval);
+        }
+      }, 46);
+    }, 950);
+
+    return () => {
+      window.clearTimeout(startDelay);
+      window.clearInterval(typingInterval);
+    };
+  }, []);
+
   return (
     <RevealSection className="relative min-h-[520px] sm:min-h-[600px] flex items-center pt-6 sm:pt-8 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -309,21 +340,21 @@ function Hero() {
       </div>
       <div className="relative z-20 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="max-w-3xl text-on-primary">
-          <p className="text-xs sm:text-label-sm font-label-sm uppercase tracking-[0.12em] sm:tracking-[0.18em] text-secondary-container mb-3 sm:mb-4 max-w-[18rem] sm:max-w-none">
+          <p className="hero-eyebrow text-xs sm:text-label-sm font-label-sm uppercase tracking-[0.12em] sm:tracking-[0.18em] text-secondary-container mb-3 sm:mb-4 max-w-[18rem] sm:max-w-none">
             Trusted Real Estate Investment & Property Solutions Partner
           </p>
-          <h1 className="text-[2rem] sm:text-headline-lg-mobile md:text-display-xl font-display-xl mb-4 leading-tight max-w-[12ch] sm:max-w-none">
+          <h1 className="hero-title text-[2rem] sm:text-headline-lg-mobile md:text-display-xl font-display-xl mb-4 leading-tight max-w-[12ch] sm:max-w-none">
             Connecting You to Prime Land and Property Opportunities.
           </h1>
-          <p className="text-base sm:text-body-lg font-body-lg mb-7 sm:mb-10 opacity-90 max-w-xl">
-            Helping you invest in prime land and property with confidence, flexibility, and expert support.
+          <p className="hero-typed text-base sm:text-body-lg font-body-lg mb-7 sm:mb-10 opacity-90 max-w-xl" aria-label={heroSubtitle}>
+            <span aria-hidden="true">{typedSubtitle}</span>
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
-            <a className="bg-primary text-on-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2 hover:scale-[1.02] transition-all text-center" href="#services">
+            <a className="hero-button-left bg-primary text-on-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2 hover:scale-[1.02] transition-all text-center" href="#services">
               Explore Our Services
               <Icon>arrow_forward</Icon>
             </a>
-            <a className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-center" href="#contact">
+            <a className="hero-button-right bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-center" href="#contact">
               <Icon>call</Icon>
               Speak With an Advisor
             </a>

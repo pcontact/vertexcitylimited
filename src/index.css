@@ -32,3 +32,94 @@ section[id] {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.hero-eyebrow,
+.hero-title,
+.hero-button-left,
+.hero-button-right {
+  animation-duration: 900ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.hero-eyebrow,
+.hero-title {
+  animation-duration: 1.45s;
+}
+
+.hero-eyebrow {
+  animation-name: hero-ease-in-right;
+  animation-delay: 600ms;
+}
+
+.hero-title {
+  animation-name: hero-ease-in-right;
+  animation-delay: 780ms;
+}
+
+.hero-button-left {
+  animation-name: hero-ease-in-left;
+  animation-delay: 2.75s;
+}
+
+.hero-button-right {
+  animation-name: hero-ease-in-right;
+  animation-delay: 2.9s;
+}
+
+.hero-typed span {
+  display: inline-block;
+  vertical-align: bottom;
+  border-right: 2px solid currentColor;
+  animation: hero-caret 700ms steps(1, end) 1s 5;
+}
+
+@keyframes hero-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes hero-caret-fade {
+  to {
+    border-color: transparent;
+  }
+}
+
+@keyframes hero-ease-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(56px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-ease-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-56px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-button-left,
+  .hero-button-right,
+  .hero-typed span {
+    animation: none;
+    border-right-color: transparent;
+    opacity: 1;
+    transform: none;
+  }
+}
