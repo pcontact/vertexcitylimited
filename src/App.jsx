@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Contact"];
+const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Team", "Contact"];
 
 const navHref = (link) => (link === "Home" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`);
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
@@ -85,6 +85,40 @@ const processSteps = [
   ["task_alt", "Support", "Move into acquisition, management, development, or portfolio support with ongoing guidance."]
 ];
 
+const teamLeaders = [
+  {
+    name: "Chidiebere Umelo",
+    role: "Managing Director/CEO",
+    initials: "CU",
+    image: "/images/md-ceo.jpeg",
+    stat: "MD/CEO",
+    statLabel: "driving smart real estate solutions",
+    quote: "Urban development works best when client trust, site discipline, and smart property strategy move together.",
+    bio:
+      "Chidiebere leads Vertex City Ltd. from Port Harcourt, bringing experience in real estate development, onsite coordination, customer relationship management, and operations-focused property service."
+  },
+  {
+    name: "Tari Eze",
+    role: "Head of Investments",
+    initials: "TE",
+    stat: "95%",
+    statLabel: "client-first acquisition process",
+    quote: "Every investment conversation should connect budget, timing, location, risk, and future value.",
+    bio:
+      "Tari shapes the company's investment guidance, helping buyers and investors compare opportunities, evaluate market fit, and choose property paths that match their goals."
+  },
+  {
+    name: "Nneka Briggs",
+    role: "Operations & Client Experience Lead",
+    initials: "NB",
+    stat: "End-to-end",
+    statLabel: "support from inquiry to handover",
+    quote: "The best property experience feels organized, responsive, and calm from the first call to completion.",
+    bio:
+      "Nneka coordinates client support, documentation follow-through, and post-acquisition service so every stage of the Vertex City experience stays practical and reliable."
+  }
+];
+
 const footerColumns = [
   {
     title: "Company",
@@ -93,6 +127,7 @@ const footerColumns = [
       ["Services", "#services"],
       ["Invest", "#invest"],
       ["Why Us", "#why-us"],
+      ["Team", "#team"],
       ["Contact", "#contact"]
     ]
   },
@@ -118,6 +153,31 @@ function RevealSection({ children, className = "", id }) {
     <section className={`transition-all duration-700 opacity-0 translate-y-10 ${className}`} data-reveal id={id}>
       {children}
     </section>
+  );
+}
+
+function LeaderPortrait({ leader, align = "right" }) {
+  return (
+    <div className={`relative mx-auto flex w-full max-w-[320px] justify-center ${align === "left" ? "lg:justify-start" : "lg:justify-end"}`}>
+      <div className="absolute left-6 top-8 h-28 w-28 rounded-full bg-primary-fixed/70 blur-sm" />
+      <div className="absolute bottom-8 right-6 h-24 w-24 rounded-full bg-secondary-container/80 blur-sm" />
+      <span className="absolute right-8 top-5 h-3 w-3 rounded-full bg-secondary" />
+      <span className="absolute left-8 bottom-12 h-10 w-10 rounded-lg border border-primary/20" />
+      <span className="absolute right-2 top-20 h-16 w-px rotate-[-24deg] bg-primary/30" />
+      <div className="relative flex h-56 w-56 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-outline-variant/30 sm:h-64 sm:w-64">
+        {leader.image ? (
+          <img
+            className="h-44 w-44 rounded-full object-cover grayscale sm:h-52 sm:w-52"
+            src={assetPath(leader.image)}
+            alt={leader.name}
+          />
+        ) : (
+          <div className="flex h-44 w-44 items-center justify-center rounded-full bg-primary text-5xl font-extrabold text-on-primary grayscale sm:h-52 sm:w-52 sm:text-6xl">
+            {leader.initials}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -312,6 +372,53 @@ function WhyVertexCity() {
   );
 }
 
+function LeadershipTeam() {
+  return (
+    <RevealSection id="team" className="bg-surface-container-lowest py-14 md:py-section-padding">
+      <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div className="mb-12 md:mb-16 max-w-3xl">
+          <p className="text-label-sm font-label-sm uppercase text-outline mb-3">Leadership Team</p>
+          <h2 className="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">The People Behind the Property Decisions</h2>
+          <p className="text-base sm:text-body-lg font-body-lg text-outline">
+            Meet the leaders shaping Vertex City Ltd. through advisory discipline, transparent service, and practical real estate experience.
+          </p>
+        </div>
+        <div className="space-y-14 md:space-y-20">
+          {teamLeaders.map((leader, index) => {
+            const isReversed = index % 2 === 1;
+
+            return (
+              <article
+                className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16"
+                key={leader.name}
+              >
+                <div className={isReversed ? "lg:order-2" : undefined}>
+                  <LeaderPortrait leader={leader} align={isReversed ? "right" : "left"} />
+                </div>
+                <div className={isReversed ? "lg:order-1" : undefined}>
+                  <p className="mb-4 text-label-sm font-label-sm uppercase text-primary">
+                    {leader.stat} <span className="text-outline">{leader.statLabel}</span>
+                  </p>
+                  <blockquote className="mb-5 max-w-2xl text-2xl font-bold leading-snug text-primary sm:text-headline-md">
+                    {"\u201c"}{leader.quote}{"\u201d"}
+                  </blockquote>
+                  <p className="mb-5 border-l-2 border-primary-fixed-dim pl-4 text-body-md text-on-surface-variant">
+                    {leader.bio}
+                  </p>
+                  <div>
+                    <p className="font-bold text-primary">{leader.name}</p>
+                    <p className="text-label-sm text-outline">{leader.role}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </RevealSection>
+  );
+}
+
 function Process() {
   return (
     <RevealSection id="about" className="bg-surface py-14 md:py-section-padding overflow-hidden">
@@ -473,6 +580,7 @@ export default function App() {
         <Services />
         <InvestmentSolutions />
         <WhyVertexCity />
+        <LeadershipTeam />
         <Process />
         <ContactCta />
       </main>
