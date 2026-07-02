@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VertexCity | Premium Real Estate Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#d3e6c4",
+                        "on-surface": "#101e21",
+                        "surface-variant": "#d6e5e9",
+                        "tertiary-container": "#383b3c",
+                        "surface-container": "#e1f1f5",
+                        "background": "#effcff",
+                        "outline": "#717974",
+                        "surface-container-low": "#e7f6fa",
+                        "surface-dim": "#cddde1",
+                        "on-background": "#101e21",
+                        "surface-bright": "#effcff",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3b4b32",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#a0d1bb",
+                        "primary-fixed": "#bbedd6",
+                        "surface-container-highest": "#d6e5e9",
+                        "inverse-on-surface": "#e4f3f7",
+                        "surface": "#effcff",
+                        "secondary-fixed-dim": "#baccac",
+                        "inverse-primary": "#a0d1bb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#204f3e",
+                        "on-primary-container": "#7eae99",
+                        "surface-container-high": "#dbebef",
+                        "on-secondary-container": "#57674c",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#232526",
+                        "error-container": "#ffdad6",
+                        "secondary": "#536348",
+                        "surface-tint": "#396755",
+                        "on-primary-fixed": "#002116",
+                        "on-secondary-fixed": "#111f0a",
+                        "outline-variant": "#c0c8c3",
+                        "secondary-fixed": "#d5e8c6",
+                        "on-surface-variant": "#414944",
+                        "on-tertiary-container": "#a3a5a6",
+                        "primary-container": "#114232",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e1e3e4",
+                        "primary": "#002b1e",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "inverse-surface": "#253336"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-xl": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.85); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="text-headline-md font-headline-md font-extrabold text-primary" href="#">VertexCity</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-body-md font-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Buy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Rent</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Sell</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Agents</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex gap-2">
+<button class="p-2 hover:bg-secondary-container/20 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface">favorite</span>
+</button>
+<button class="p-2 hover:bg-secondary-container/20 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface">person</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:bg-primary/90 transition-all text-body-md">
+                    List Your Property
+                </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center pt-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic, wide-angle shot of a stunning modern architectural masterpiece featuring floor-to-ceiling glass walls, a cantilevered roof, and an infinity pool. The scene is captured at twilight with warm interior lighting contrasting against a deep blue evening sky. Lush, minimalist landscaping surrounds the property, creating an atmosphere of ultimate luxury and peaceful seclusion. The overall aesthetic is clean, high-end, and extremely professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN1LzFMNAYz-WvqgO_7nWIwCES0R8wmnYVjp2hyhmGBXQ2i27xSh25_V-mAK7nWk2T2ZvHHFIC_yHzVoUVkpB_5_TudaBdN3LdZXx7Q7fCT0EcPwqK3Yh3R_hVvf8yGBiXSEQNreQ7ujwGqynyj1Sdd82vIkpihQvOilOIb834qIIFnpzC8Wsv8d47ccoElqXVep1VJxJb-Zrf6WWKls8xTGybJSdEIfVtk_RN0nExwK67LT9g9nDarAHl1axXgskXK6eZbLgYWhvz"/>
+</div>
+<div class="relative z-20 w-full px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-2xl text-on-primary">
+<h1 class="text-display-xl font-display-xl mb-4 leading-tight">Find Your Future Home with VertexCity</h1>
+<p class="text-body-lg font-body-lg mb-10 opacity-90">Explore thousands of verified premium properties and find a place you'll love to call home. Our concierge-level service ensures a seamless journey.</p>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:scale-105 transition-all">
+                        Explore Properties
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+                        How It Works
+                    </button>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-4">
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="A close-up portrait of a professional woman in business attire smiling warmly. Soft, professional studio lighting against a neutral background. Modern corporate headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNCbyE0kqt-CixrkmZxaUdFQuia4aN22xru_si7HTvv_JbiMQHjtRx23ogvGQt5FICZLe7crNYbRBsbCSPBKGTGm2OruoNEwcJdC3PySL_NPCqsn4Nmd6496oS82KmJCRDYnD-Ein-pp0Xa6UW8HthnfyrbWk7jHawcrM9nLkM12VrAyOR-sEz4uK0vaJ6Y_xNf0m-Q0SDCAshAZ-dEynpQnxb46XTiU-XzrIpmH4pbcv_LfJe8-G_geNiCwAUBACRtnYitYBsKQ3"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="A portrait of a confident male real estate professional wearing a sharp navy suit. Minimalist clean background with natural soft focus. High-end professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJvNlxeN44RwWVhT1yoW_3m05Hvs7PK6MMqhsaK7-zNV8nF5_kREM8BD38WPc_c7C32xIPRPUfvaMqDLCNzp9hUtb3WDfWV5IgBm8riYn4nDa-8wAb-4wj7NpI9Dc90mo5sfVT4yXbz-2u171xRvrc5xtg8wgPeb8f2hwsVtEIzAwqJcrEEGtf_rSfsGHXvK4trMsCEyu4BPLEII3MX9bQ3_3TU3_vh-gbAMUbZHBRKd_MZP3l6QLU4_k-Aq94Vlz2Zcs7WMZ_hlRf"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="A diverse professional woman smiling confidently, representing modern agent expertise. Natural daylight and a bright, corporate feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiKwhSNw3ip_wfgwVFVODCqZC44z0Rf9B1ReV86250uLl1RA40ydSd6KJBbhcmA_uhS9h7gUPY_eRAm0gJ9lUF8n7rAkESipM-DQWxHjnOu8SHKIY-VTlSm57gaveuSBeAhohgVfY1caYgSBORbTmO0yC7S7l6p-h8pK5UqSD22nSgTc8OUE_wlpRBiJhtzNTyEgo5OQvUJoW9rVBzUz8aoTZNahvkfBLCk-zP9hGZpjiEmWmWk3nJQiY5WvnibylMVFas5lH24oQK"/>
+</div>
+<span class="text-body-md font-body-md">Trusted by 10,000+ happy clients</span>
+</div>
+</div>
+<!-- Integrated Search Bar -->
+<div class="mt-20 glass-panel p-8 rounded-2xl shadow-2xl max-w-5xl">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-end">
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-2">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container rounded-lg border-none focus:ring-2 focus:ring-primary text-body-md" placeholder="Enter location" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-2">Property Type</label>
+<select class="w-full px-4 py-3 bg-surface-container rounded-lg border-none focus:ring-2 focus:ring-primary text-body-md appearance-none">
+<option>Any Type</option>
+<option>Apartment</option>
+<option>House</option>
+<option>Villa</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-2">Price Range</label>
+<select class="w-full px-4 py-3 bg-surface-container rounded-lg border-none focus:ring-2 focus:ring-primary text-body-md appearance-none">
+<option>$0 - $5,000,000+</option>
+<option>$500k - $1M</option>
+<option>$1M - $5M</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-2">Beds</label>
+<select class="w-full px-4 py-3 bg-surface-container rounded-lg border-none focus:ring-2 focus:ring-primary text-body-md appearance-none">
+<option>Any</option>
+<option>1+</option>
+<option>3+</option>
+<option>5+</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary w-full py-4 rounded-lg font-bold flex justify-center items-center gap-2 hover:bg-primary/90 transition-all shadow-lg">
+<span class="material-symbols-outlined">search</span>
+                        Search
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Property Types -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Explore Property Types</h2>
+<p class="text-body-md font-body-md text-outline">Find exactly what you're looking for across our diverse portfolio</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">
+                View All <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">apartment</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Apartments</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">1,245 Listings</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">home</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Houses</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">2,345 Listings</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">villa</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Villas</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">856 Listings</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">domain</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Condos</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">1,032 Listings</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">house_siding</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Townhouses</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">645 Listings</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-4xl mb-3">landscape</span>
+<h3 class="font-bold text-primary group-hover:text-on-primary">Land</h3>
+<p class="text-label-sm text-outline group-hover:text-on-primary/80">321 Listings</p>
+</div>
+</div>
+</section>
+<!-- Featured Properties -->
+<section class="bg-surface-container-lowest py-section-padding">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Featured Properties</h2>
+<p class="text-body-md font-body-md text-outline">Exclusive listings curated by our top-tier agents</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 border border-outline-variant rounded-full hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-3 bg-primary text-on-primary rounded-full shadow-lg hover:scale-105 transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<img class="w-full h-full object-cover" data-alt="A luxury contemporary villa in Miami with a sparkling pool and palm trees in the background. High-key lighting, bright colors, and clean lines. Professional real estate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEnPNtoxFJNuYGNpiVlaP6TaSJKBq7gDq8HKUjrbKrjGzN7gtYSsEu0i9bDoPvUC-sVASvYuHfDLjxQDddlmUvw-8ltcMGW9eKQ7S3RCoda3WYFoYOev1KvpBq1mgVp2_BvioMaCHXcfhlVbThr2sfi842pUicwzpF-fSUF5pdrpAa32bb8BSAzGI_y94rSKA1QvO88EajkswyObqVM5S1bQZio1WP1Rd31G60PGfBT8zvUj8Syxr4e90su07w9SlvIVxZ_peGi9A"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-bold uppercase">For Sale</span>
+</div>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full text-primary hover:bg-white transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-primary mb-2">Luxury Villa in Miami</h3>
+<div class="flex items-center gap-1 text-outline mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-body-md">Miami, FL</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-headline-md text-secondary font-bold">$3,250,000</span>
+</div>
+<div class="flex border-t border-outline-variant/30 pt-4 justify-between text-outline text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bed</span> 4 Beds</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bathtub</span> 5 Baths</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">square_foot</span> 3,200 sqft</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<img class="w-full h-full object-cover" data-alt="A sophisticated modern apartment interior in New York City with panoramic skyline views through large windows. Minimalist furniture, neutral tones, and elegant styling. The lighting is soft and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhKfKjQPO3DZKi5F9BFyjNPlW3krxHr7oUKcdnLi9H3L2KoyWfxnZYx9hkz0CMpddFxeLG8jKAMjwRWHWSgqaOWW97XIyphk1eTWbiJFVJohC4ebyB8nTBFbapRm2vacga3ngQUqTKZQhyOJU0f3CtLkePIXpNcM10UE8Vtp6pHquEUmOC4saGSbP0_uMhlhBqQ-joqIlLH8g0KBahPW78NJlV0jEwbbeB5nZsrwhCR9uKRfIwIbSC3eA3jx5J2inlCTITS3-BP9XG"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded text-label-sm font-bold uppercase">For Rent</span>
+</div>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full text-primary hover:bg-white transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-primary mb-2">Modern Apartment</h3>
+<div class="flex items-center gap-1 text-outline mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-body-md">New York, NY</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-headline-md text-secondary font-bold">$4,500 <span class="text-label-sm font-normal text-outline">/mo</span></span>
+</div>
+<div class="flex border-t border-outline-variant/30 pt-4 justify-between text-outline text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bed</span> 2 Beds</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bathtub</span> 2 Baths</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">square_foot</span> 1,250 sqft</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+<div class="relative h-64">
+<img class="w-full h-full object-cover" data-alt="A charming large family house in Austin, Texas. Classic architecture with modern updates, a manicured green lawn, and beautiful oak trees. Warm, welcoming daylight lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAtOA9jyHA-ltEc4r2Q1rqYJpCCyBnfiYAWJga-JF8uNV8W8z-eIQj6qwYep-H3R0ki_T1ab3TEDyikcMpKvc_3mU9Uix1gUyieJpXD2SK-NTFE8OaBynGdmGP7lDVqOpmM0Nfe1HRcIlOk9eOeRQdYoox_x_gAssDNwZe1U6h9lKSBvTkwBdWLkXrIMtkzioaKdZVitDZNE2gCJVw8VMNcQMqNqBqXwLfrSm-mSCpZjbcJHjBCa65HOvt3cq1e6dsJq53Zmdc9w-9"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-bold uppercase">For Sale</span>
+</div>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full text-primary hover:bg-white transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-primary mb-2">Family House in Austin</h3>
+<div class="flex items-center gap-1 text-outline mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-body-md">Austin, TX</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-headline-md text-secondary font-bold">$980,000</span>
+</div>
+<div class="flex border-t border-outline-variant/30 pt-4 justify-between text-outline text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bed</span> 3 Beds</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">bathtub</span> 2 Baths</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined">square_foot</span> 2,100 sqft</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why VertexCity (Value Props) -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-4">Why Choose VertexCity?</h2>
+<p class="text-body-lg font-body-lg text-outline max-w-2xl mx-auto">We redefine the real estate experience with a focus on trust, transparency, and expert guidance at every step.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-primary mb-3">Verified Listings</h3>
+<p class="text-body-md text-on-surface-variant">Every property on our platform undergoes a rigorous 50-point verification process.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-primary mb-3">Best Price</h3>
+<p class="text-body-md text-on-surface-variant">Our market analysis tools ensure you get the absolute best value for your investment.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-primary mb-3">Expert Agents</h3>
+<p class="text-body-md text-on-surface-variant">Our top 1% agents are available 24/7 to guide you through complex transactions.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">task_alt</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-primary mb-3">Easy Process</h3>
+<p class="text-body-md text-on-surface-variant">From viewing to closing, we've digitized the entire journey for maximum speed.</p>
+</div>
+</div>
+</section>
+<!-- Client Stories (Testimonials) -->
+<section class="bg-surface py-section-padding overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<h2 class="text-headline-lg font-headline-lg text-primary text-center mb-16">Client Stories</h2>
+<div class="flex gap- gutter overflow-x-auto hide-scrollbar pb-8">
+<!-- Testimonial 1 -->
+<div class="min-w-[400px] bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/20">
+<div class="flex text-secondary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">"VertexCity made finding our dream home so easy. The team was professional, helpful, and always available to answer our questions."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a smiling woman in her 30s, Emily Johnson, looking warm and approachable. High-quality professional lighting with a soft-focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT5vOzYA_ZMw8eCTdKQFYRrVC4FaNKQZwouF2IjJl3eNMd_1EYdNqK1HESnNp2vdP_LL0NKNc3oldZhd3qqmOkiWSsPmOgpyhNFCwrgu-HRU6_8ikWyhXtk9B6m8IFoAEkev4vtjKY1kjEPWQHSzn93iBebBP-eE8fMAeZ8-OBsKj2ZhiZrrfoxaIZZu89ZuaNP7HSY4v9Pt3Cys1KFblechfBNHs9Rz6Z10j1CwfS2qcQ2aKoGcuU84x_NmTG5IDLpRLdsDnWu1hQ"/>
+<div>
+<p class="font-bold text-primary">Emily Johnson</p>
+<p class="text-label-sm text-outline">New York, NY</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[400px] bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/20">
+<div class="flex text-secondary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">"The best real estate experience I've ever had. Highly recommend VertexCity to anyone looking to buy or rent high-end property."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a confident middle-aged man, Michael Brown, in a smart-casual outfit. Professional studio photography style with a light gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSoRjNvwddrlYOFSWj0-p8DXuheiQ_mcno4nXxjMJ2CwOx0U8dSzbsO7VeXQVBYksL9PkSWD5UssvxnXl4HDkE3v8OmPVkP6rekSYuXfuVRtUCU9x2ZpLJScJK-9co7SyfHg_WvJbtwk0haVkm_mGOeEAEJM_hXPdZbIyvBtqj8qs_IFRvrMBaF0588dHkUS5FLdB-ixnfknRqvuiY11ne2jQch65xj0E3JJiCdHXdqOD7w2-Sa6Udd1cvEZiHQf-QCr7nDC8UIWK"/>
+<div>
+<p class="font-bold text-primary">Michael Brown</p>
+<p class="text-label-sm text-outline">Austin, TX</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="min-w-[400px] bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/20">
+<div class="flex text-secondary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">"I sold my property in record time with VertexCity. Their marketing and support were outstanding throughout the whole process!"</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a professional woman, Sophia Martinez, with a bright and friendly smile. Modern corporate look with natural office lighting in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppZo5OQmt5hK7VnUPp2Tw1VWsZcmzdYduvQEyt_HaqlYlNZG9CHY4I0lCdWRgZdb4t8a00_KSYcKniPyT77CFozoxTIhqj6T3irK983i__N8T0E-80afRJGLlATHW3Iq199kMRpJMPX81KBDUycsMFgjoHUMeCwTRYEt-1qe0fdh3Env67E3Bl7-9N3_-VXTJ4YRYMIWqLSsP4aAELEMn4rgqxCOnp8aQ-F075x65ENkVXCsXhQJi4LcSvgcMjdpaT_2rejTVgonj"/>
+<div>
+<p class="font-bold text-primary">Sophia Martinez</p>
+<p class="text-label-sm text-outline">Miami, FL</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="px-margin-desktop max-w-container-max mx-auto py-12">
+<div class="relative bg-primary rounded-[40px] overflow-hidden p-12 md:p-20">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A blurred, abstract luxury living room background with soft neutral colors and warm ambient lighting. Elegant furniture silhouettes are barely visible, creating a high-end atmospheric texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYW9dkkzFDFXZQxLaNAuaalBM6VUspOCmQxNPSN9IzEgUijWUV43nTKhKduR3f1ac6V1xRqWU5bhDH15rrcc3j9j3Ce5oXFAD91mMbhIGX5JKnlEugifE1rm1N1MMk-iaivvhT2keprUw5-4f-5U1Mr79hggN0DFA3rEo7bb6oHdEqjjTaYKowLXmAWN12HxklbLWinEloKYT5VXesLiF_ousWuaDA9LQWC0ntPYfb482FwlvTAzl45yKri3JcY--JtyncIwTc0gHb"/>
+</div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-display-xl font-display-xl text-on-primary mb-6">Get Exclusive Property Updates</h2>
+<p class="text-body-lg font-body-lg text-on-primary/80">Subscribe to our newsletter and be the first to know about new listings, market trends, and special offers from VertexCity.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow px-8 py-5 rounded-full border-none focus:ring-4 focus:ring-primary-container text-primary text-body-md font-body-md" placeholder="Enter your email address" type="email"/>
+<button class="bg-secondary text-on-secondary px-10 py-5 rounded-full font-bold hover:bg-secondary/90 transition-all whitespace-nowrap shadow-xl">
+                        Subscribe Now
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary pt-20 pb-10 text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto border-b border-on-primary/10 mb-10">
+<div class="col-span-1 md:col-span-1">
+<h2 class="text-headline-md font-headline-md font-bold text-on-primary mb-6">VertexCity</h2>
+<p class="text-body-md opacity-70 mb-8 max-w-xs">Your trusted partner in finding the perfect property. We bring luxury and efficiency to your real estate journey.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-on-primary/20 flex items-center justify-center hover:bg-on-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-primary/20 flex items-center justify-center hover:bg-on-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-primary/20 flex items-center justify-center hover:bg-on-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Quick Links</h4>
+<ul class="space-y-4 opacity-70">
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Home</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Buy</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Rent</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Sell</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Agents</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Property Types</h4>
+<ul class="space-y-4 opacity-70">
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Apartments</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Houses</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Villas</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Condos</a></li>
+<li><a class="hover:text-on-primary hover:opacity-100 transition-all" href="#">Land</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Contact Us</h4>
+<ul class="space-y-4 opacity-70">
+<li class="flex gap-2"><span class="material-symbols-outlined text-sm">location_on</span> 123 Dream Street, New York, NY 10001</li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-sm">call</span> +1 (800) 123-4567</li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-sm">mail</span> info@vertexcity.com</li>
+</ul>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-label-sm opacity-50">
+<p>© 2024 VertexCity. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">FAQ</a>
+</div>
+<p>Designed with <span class="text-red-500">❤</span> for your dream home</p>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

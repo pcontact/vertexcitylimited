@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VertexCity | Modern Emerald Luxury Real Estate</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display for Serif and Inter for Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-emerald-dark': '#002117',
+            'brand-emerald': '#064e3b',
+            'brand-emerald-light': '#95d3ba',
+            'brand-surface': '#f9f9ff',
+            'brand-on-surface': '#141b2b',
+            'brand-outline': '#707974',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(0, 33, 23, 0.9) 0%, rgba(0, 33, 23, 0.4) 100%);
+    }
+    .thin-border {
+      border-width: 0.5px;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="bg-brand-surface text-brand-on-surface font-sans overflow-x-hidden selection:bg-brand-emerald-light selection:text-brand-emerald-dark">
+<!-- BEGIN: Navigation -->
+<header class="absolute top-0 left-0 w-full z-50 py-8 px-12 flex justify-between items-center bg-transparent">
+<div class="flex items-center gap-3" data-purpose="logo">
+<div class="w-8 h-8 border-[0.5px] border-brand-emerald-light flex items-center justify-center">
+<span class="text-brand-emerald-light text-[10px] font-light">VC</span>
+</div>
+<div>
+<h1 class="text-white text-xl font-serif tracking-[0.2em] uppercase">VertexCity</h1>
+<p class="text-brand-emerald-light text-[7px] tracking-[0.4em] uppercase leading-none opacity-80">Built to Inspire</p>
+</div>
+</div>
+<nav class="hidden md:flex gap-10 text-white/90 text-[11px] font-medium tracking-[0.15em] uppercase">
+<a class="hover:text-brand-emerald-light transition-colors" href="#">Home</a>
+<a class="hover:text-brand-emerald-light transition-colors" href="#">About</a>
+<a class="hover:text-brand-emerald-light transition-colors" href="#">Services</a>
+<a class="hover:text-brand-emerald-light transition-colors" href="#">Projects</a>
+<a class="hover:text-brand-emerald-light transition-colors" href="#">Insights</a>
+<a class="hover:text-brand-emerald-light transition-colors" href="#">Contact</a>
+</nav>
+<a class="border-[0.5px] border-white/30 hover:border-brand-emerald-light text-white px-7 py-2 text-[10px] uppercase tracking-widest transition-all" href="#">
+    Get a Quote
+  </a>
+</header>
+<!-- END: Navigation -->
+<!-- BEGIN: HeroSection -->
+<section class="relative h-screen w-full overflow-hidden flex items-center">
+<!-- Main Background Image -->
+<img alt="Modern Luxury Glass Skyscraper" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApowLy0l9YmYdU7HlbzQkPEJ7IWW1TsREOSyxroB8YWhHCGI26NV_vESeAJ22D_rv11MUMYackUQz0K-Eaprd4tkhb2gU6bzDO7DFbJ3IFRfLrG3CoIWxcX4bsyXWKQmxHcvJutgjrFfF8m9oueF7DyLIapqa6Qw4eQRPc9RsKn0oyOtn6sL7Zy49lJR6FGLeMRnTH6Yu66QSEm_-5Hd9yZWdHxGtL6t5L9gaDsq6C7K87MaQ-Xg6QSv3S07lGz2DhqVcd_s0-V5U"/>
+<div class="absolute inset-0 hero-overlay"></div>
+<!-- Content Overlay -->
+<div class="relative z-10 max-w-7xl mx-auto px-12 w-full pt-16">
+<div class="max-w-2xl">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-8 h-[0.5px] bg-brand-emerald-light/60"></div>
+<span class="text-brand-emerald-light tracking-[0.3em] text-[10px] uppercase font-semibold">VertexCity Real Estate</span>
+</div>
+<h2 class="text-6xl md:text-8xl text-white font-serif leading-[1.1] mb-10 text-balance">
+        We Build <br/> <span class="italic text-brand-emerald-light font-light">Spaces</span> That Last
+      </h2>
+<p class="text-white/70 text-lg mb-12 max-w-md leading-relaxed font-light">
+        Premium construction and architecture services with precision, passion, and a promise of quality.
+      </p>
+<a class="inline-flex items-center gap-4 bg-transparent border-[0.5px] border-brand-emerald-light text-brand-emerald-light px-10 py-5 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-brand-emerald-light hover:text-brand-emerald-dark transition-all duration-500" href="#">
+        VIEW OUR PROJECTS
+        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: FeaturedProjects -->
+<section class="bg-brand-surface pt-40 pb-40 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-xl">
+<span class="text-brand-emerald tracking-[0.4em] uppercase text-[10px] font-bold block mb-4">Our Work</span>
+<h3 class="text-5xl font-serif leading-tight">Featured Projects</h3>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 flex items-center justify-center border-[0.5px] border-brand-emerald/20 text-brand-emerald cursor-pointer hover:border-brand-emerald transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></svg>
+</div>
+<div class="w-12 h-12 flex items-center justify-center border-[0.5px] border-brand-emerald text-brand-emerald cursor-pointer">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></svg>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-8 aspect-[4/5]">
+<img alt="Hillside Residence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCarjFS4Hbd5kKqLOVU9VkvXwbimpVhkKMPuQGEtQ2TlVA4zbexHORw3xoqXYXe1NwurjT6WT-GFdYvOza69L3KLhJGQXcUsO05SL0_m2665mEyLP0n6pyFM6A2uZjm8WlHM3pwCISlVfpiqsT3A8myN6RU-IEQB4tK8VUrZDHTpdChIPAqXVfaSpMGHCRiVGPuddgTKzXqKkDGjclF13Vz0zdi0jrnnNyuHv9I9t6FOPPbMQNYfNZyyWdHIpUviOTjgraYDZLJ_ws"/>
+</div>
+<div class="space-y-2">
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase">Luxury Villa • 4,800 sq ft</p>
+<h4 class="text-2xl font-serif">Hillside Residence</h4>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-8 aspect-[4/5]">
+<img alt="Zenith Office Tower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6lec6FcFN0bcakAhXSFcpZdkszlFQxI5sVoZvcItcMOLGWC1jmaZerNk7J7L4CYCu5-kt4BRAjbEvHqJvI5rDiDtvnNjDjZDfYCpa_zxRjRkSr1d17GvvNp5mC0-7bkdDhzOCVxrCQD6IP7a_AI35DKV0Gpacg5WfsHFJKVtspdSLqRhioxcrHTNWiDTS1Q2NQa9t-0anSurYHnnz6LLl-jRuJ-REOPvXf0GiSYkxe5xUdx0-ZB3AGujvjdCLFaMQtbl4spG500"/>
+</div>
+<div class="space-y-2">
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase">Commercial • 35,000 sq ft</p>
+<h4 class="text-2xl font-serif">Zenith Office Tower</h4>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-8 aspect-[4/5]">
+<img alt="Aurora Retail Complex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzOA9gtOkS4s-gjHHGe4xlEsaWn-wKquf7sgMfi8JdJ4jzIfq3x7GIsEQSlKPHELI3awsP4c8g_55RzBJ-PAa9aZba25-H_czEgYP2qxmmC6ekwFYbdrjqmXz7AOOF3PfpjkAgD_bTJSwQEC8YSYs8LdEESnRF01R-mR-nTboLN-1TmXbS4Xvb7oUHRvcz2oWQizNhS_D1kTtZEsPhnI5WLziU3LhXW2z2gnqmjUGeD_R98BoA8JHyTJhUSt6rzl1OxTCF8rDQmMs"/>
+</div>
+<div class="space-y-2">
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase">Commercial • 22,000 sq ft</p>
+<h4 class="text-2xl font-serif">Aurora Retail Complex</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FeaturedProjects -->
+<!-- BEGIN: ExperienceSection -->
+<section class="bg-brand-emerald-dark text-white py-48 overflow-hidden">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+<div class="relative">
+<div class="flex items-baseline gap-2">
+<h3 class="text-[120px] font-serif leading-none text-brand-emerald-light">15</h3>
+<span class="text-5xl font-serif text-brand-emerald-light/40 leading-none">+</span>
+</div>
+<p class="text-2xl font-serif mt-6 tracking-[0.1em] text-white/50 uppercase">Years of Distinction</p>
+</div>
+<div class="space-y-12">
+<div>
+<span class="text-brand-emerald-light tracking-[0.4em] uppercase text-[10px] font-bold block mb-6">Built on Trust</span>
+<h3 class="text-5xl font-serif mb-10 leading-[1.2]">Experience That Builds Confidence</h3>
+<p class="text-white/50 text-lg leading-relaxed font-light">
+          For over 15 years, VertexCity has delivered exceptional construction and design-build solutions. From concept to completion, we bring expertise, transparency, and craftsmanship to every project.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-y-16 gap-x-12 pt-10 border-t border-white/5">
+<div class="space-y-2">
+<p class="text-3xl font-serif text-brand-emerald-light">200+</p>
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-semibold">Projects Completed</p>
+</div>
+<div class="space-y-2">
+<p class="text-3xl font-serif text-brand-emerald-light">98%</p>
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-semibold">Client Satisfaction</p>
+</div>
+<div class="space-y-2">
+<p class="text-3xl font-serif text-brand-emerald-light">Skilled</p>
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-semibold">Expert Team</p>
+</div>
+<div class="space-y-2">
+<p class="text-3xl font-serif text-brand-emerald-light">Quality</p>
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-semibold">Assured</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ExperienceSection -->
+<!-- BEGIN: OurServices -->
+<section class="bg-brand-surface py-48 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-32">
+<span class="text-brand-emerald tracking-[0.4em] uppercase text-[10px] font-bold block mb-4">What We Do</span>
+<h3 class="text-5xl font-serif">Our Services</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-24">
+<!-- Service 1 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Architectural Design" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY_K30564hyaRGusd1ctJ_wmjc8nT1mF--YBuRYNDF_t1s2IdaPGKAmIHQKQTpoYw1-OxjySL7Iv7prmMkmnf3ArOVwviP4in6dLsZYarny_78bpHKxTzIe78hAUdJt_zRvJc4V-Dt36e7fxIubCEBxgFKeq18zqmZFDE0DmRQk8CWiUnenZ3j8zbY2DljUwX89NwA4DtGoKWwR2iBqlFtoZqowa_3bxAbWN4ead1rDdLNYel56RXqrC-sNE6YYXyI-M_T-ejgGzM"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Architectural Design</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">Innovative designs that blend beauty and functionality for modern living.</p>
+</div>
+<!-- Service 2 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Residential" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCREuU2XuAvL5K39s4I401XHcCtznQqmLItH4GeTnLu6Gi_s34MsDRULX7UDxFp_4uyu1AzQBmNTyWR85Iew7irlPDGNGnQgtuaGcTWuKP89GBQuElu44Tyb0btf3w9xTblT1zFp05zDA1wAPvXZRiVY8ntVwdiLRs3xrBrMdMzQW-uSnTOvsA-9bT_COHOIkNnxmBgSA1ZkIuf7Nr2y1v-tZakWPh-Tsi31XnT3PcspDlElLwy2sJdzpSFFjB2YNSKGfNdt28g4dc"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Residential Construction</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">Custom homes built with precision and lasting quality from the ground up.</p>
+</div>
+<!-- Service 3 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Commercial" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8zn6flNxIQmEsWuRi98wqmzfmgYATpLCnpF7cMJTKruX_8i19KWTH81p6wkh7ResUsWn6GzdorMNHpRQNjHpVv8K8SjKYiLwGLIZMY7UPhP60aQTruG8v3Ob4onvg4lkN3GeoOfALpTFFFFwGjt_GRVXMCgApeC34o0-5tmmLom1m4oP8Ijk3PHNf_JdKUG1qLIntZnL5z5iUZP-GinnGgHWZdeQxtPu73BmPcS9KFusVCf3eBFVmmhOJbuWXVaqQi471Ugr6rVY"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Commercial Construction</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">High-performance spaces designed for modern businesses to thrive and grow.</p>
+</div>
+<!-- Service 4 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Interior" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDd1cpplZJ3wyczHMO9OiZXc6XFZMpXXNaA-oXnPafTtDiMTFK3uNq841fZiKJhA1XSdV6uaq9HbggsMho72x0qhWNaVCGVp8AcOVBjFfo6ttF9tGszi8Aj_2Jd1OcTXs8LlnkBja_pXXgO3eA7IVYMIPymo4KNJg9G7Upa572JNzqXqXzeGTowXWdIGFPUBUToGNCulNR7hjkRA5vRSFJFZkaswjqsVzmAWc6TQzJIWkuRX3c3kimCmJOR5uxg3rI0jzvoWjLQic"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Interior Fit-Out</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">Functional, elegant interiors tailored perfectly to your unique vision.</p>
+</div>
+<!-- Service 5 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Renovation" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHgeUmff9vk0vrlg3OpJGDtvRFaWQkJcu8ntG7WNc2qWOycJsmeHuQsGHud9XIFlFzTGmkEudx4IlCTigIto5u0PrGxYot58tD4nOQySI6YH6KCVBuADG8CAInqvvIWR2xWXJTzBuvBAzdqHf3rFCfFxyTYDVEZvwsyWLkJ1fHufCS-ECAdydrhjoWC1EJbpNzV4xkN_XB8lOrN-LjwvsVI-zgUtrCKXx7wlkJ-SrbNivRzZbbLQ__KpiEODqU9V18y1Rd8jNRehE"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Renovation</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">Transforming existing spaces with modern solutions and meticulous care.</p>
+</div>
+<!-- Service 6 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-8 p-6 bg-white border-[0.5px] border-brand-emerald/10 group-hover:border-brand-emerald transition-colors duration-500 grayscale group-hover:grayscale-0">
+<img alt="Project Mgmt" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuFkdxVeRwtyz2l3TkFdyBD18Br6Bv6EDY0TK6HkzD_p_7JhGLGiIgvYkFdViMOSENW2ImOjMP4N3x4U6mw90HmIOmFnJHVdOO90-R_F9imciXs7nPFeEJ3PNFVIgURwiggRR_gkQBBp-mSJOJIkmV4j5TzyD_AtulYGEToL4RoJm-eYbUjXwStd9CNXO2u-F4C3v40P5pvnoBFpqctNXl4LLMN2tM_GGepykxHP3jXarGc9WwWvDtJYQ1YQqy4t3zzkT006rzLy8"/>
+</div>
+<h4 class="text-xl font-serif mb-4">Project Management</h4>
+<p class="text-xs text-brand-on-surface/50 leading-loose font-light max-w-[240px]">End-to-end management ensuring professional and on-time delivery.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: OurServices -->
+<!-- BEGIN: BlogSection -->
+<section class="bg-brand-surface pb-48 px-12">
+<div class="max-w-7xl mx-auto border-t border-brand-on-surface/5 pt-48">
+<div class="flex justify-between items-end mb-24">
+<div>
+<span class="text-brand-emerald tracking-[0.4em] uppercase text-[10px] font-bold block mb-4">Insights &amp; Ideas</span>
+<h3 class="text-5xl font-serif">From Our Blog</h3>
+</div>
+<a class="text-[10px] font-bold tracking-[0.2em] uppercase border-b border-brand-emerald pb-2 hover:text-brand-emerald transition-colors" href="#">View All Articles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+<!-- Blog Post 1 -->
+<div class="group">
+<div class="overflow-hidden mb-8 aspect-[4/5] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Blog Post 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWajGGqhEd9hRXuyCRnihCMB0rWm9i-ZxpxZsjrMlQsSopOSJsHybNF0_qm8peRYdmOkrksUw_E2tpaBbOfZnEMa_aieRJTlVH-_Gv-dRssmVCbw8vavwXYKe05vo9FWTos1RXnlmvQzr2Uqw-hHvcIAzIqD4WPwgBwVPHHLOZX1vDjWPTp8FW7hdCi2A91jKggvxqypp7moXczfC9NLcG22CeE4STLP-h6-JqF1cPgX-XAkVx8IyDSBJ57I9jsaHi_LttJgcAeU"/>
+</div>
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase mb-4">May 20, 2024</p>
+<h4 class="text-xl font-serif mb-6 group-hover:text-brand-emerald transition-colors leading-snug">Top 10 Modern Home Design Trends for 2024</h4>
+<a class="text-[10px] font-bold tracking-widest uppercase flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">Read More <span class="text-brand-emerald">→</span></a>
+</div>
+<!-- Blog Post 2 -->
+<div class="group">
+<div class="overflow-hidden mb-8 aspect-[4/5] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Blog Post 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm6FqKyuadmUbTDpXyW7Ff5pIPaaXw5vZxL-p0Su0IBRpGWA-DrH5af7wS8moi13ygczZu7TuJ2xzJ_bOICSlzV-OqEjsuV9iboaWSVLJ6G5QwWcQRWNfOOs94l--1mIsvIBhnV17VG59lvCESDxi6c4mb-WdKuvRGYAyaA75xauWZ52yAIAz1Iuf2JNIHZMGxp5Svwn4SpaedW3g0dHnMpq37AUuwkVwtsHlDBkzdPJYOea-gTwizaFhq-FsRajgv5tG4Mqg3X24"/>
+</div>
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase mb-4">May 12, 2024</p>
+<h4 class="text-xl font-serif mb-6 group-hover:text-brand-emerald transition-colors leading-snug">Choosing the Right Materials for Long-Lasting Results</h4>
+<a class="text-[10px] font-bold tracking-widest uppercase flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">Read More <span class="text-brand-emerald">→</span></a>
+</div>
+<!-- Blog Post 3 -->
+<div class="group">
+<div class="overflow-hidden mb-8 aspect-[4/5] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Blog Post 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4lxbDjJWF0O_qsAv8zZVLeAVhBKvYOvP6DK4bOX4qT7PxA3s8wN81CO-E0gAFunfuEMo52ZsxkqMJtAzc6M99vtsVRhiFUvNKaAp-wZvS1IPFbh5_zZDg3jeNguNPDG2oA5TCdZnj3DnSnw4jZXCOmdaVxqIHsJIFmnrc_4-qy5H7_9WJB42dvm6OYqpcNEyyBlin2OPkKwT1MmgNFUjVefzZ8aP54KNR0DDWbZ6ADrVKBH2hvoaeX5OILHFrbtPujG7YXDKA3O0"/>
+</div>
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase mb-4">May 05, 2024</p>
+<h4 class="text-xl font-serif mb-6 group-hover:text-brand-emerald transition-colors leading-snug">Smart Homes: The Future of Comfortable Living</h4>
+<a class="text-[10px] font-bold tracking-widest uppercase flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">Read More <span class="text-brand-emerald">→</span></a>
+</div>
+<!-- Blog Post 4 -->
+<div class="group">
+<div class="overflow-hidden mb-8 aspect-[4/5] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Blog Post 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM5u4lfwRbQDwNnbioCZP789RcTBrPUphtgJK6eWuvgd2d0clGS3sojx-fT9nnLb_-IbTINv-BHC0Sc-dmlq3bJCZZu8jMnYN81ahSjp8y-e_4vo6ol47MxKPLhht-da5V9Dr1ao7_ykU-RHkFKJ5WHN1MJfGXNVf5Tw0iYThiWuScEt4IwNHsafBHCavVbSXXJ7pC-ZAGMZhXuLsO2Ii7toORJ-WS2DD_UVPHIv7fGcmLJl1vdJPRIrI_oBncj3jD9f65pHWycQk"/>
+</div>
+<p class="text-[9px] text-brand-emerald font-bold tracking-[0.2em] uppercase mb-4">Apr 28, 2024</p>
+<h4 class="text-xl font-serif mb-6 group-hover:text-brand-emerald transition-colors leading-snug">Renovation vs. Rebuild: What's the Right Choice?</h4>
+<a class="text-[10px] font-bold tracking-widest uppercase flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">Read More <span class="text-brand-emerald">→</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: BlogSection -->
+<!-- BEGIN: CTAFooterSection -->
+<footer class="bg-brand-emerald-dark text-white pt-48 pb-16 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-start mb-48">
+<div data-purpose="cta">
+<h3 class="text-7xl font-serif leading-[1.1] mb-12">Let's Build <br/> <span class="italic text-brand-emerald-light font-light">Something Great Together</span></h3>
+<p class="text-white/40 mb-12 max-w-sm font-light text-lg">Have a project in mind? Let's discuss how we can bring your architectural vision to life with precision and luxury.</p>
+<a class="group inline-flex items-center gap-6 bg-brand-emerald text-white px-12 py-6 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-brand-emerald-light hover:text-brand-emerald-dark transition-all duration-500" href="#">
+          Get in Touch <span class="text-xl group-hover:translate-x-2 transition-transform">→</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:pt-20">
+<div class="space-y-12">
+<div class="space-y-4">
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-bold">Contact Info</p>
+<p class="text-xl font-serif">+1 (555) 123-4567</p>
+<p class="text-xl font-serif">hello@vertexcity.com</p>
+</div>
+<div class="space-y-4">
+<p class="text-[9px] text-white/40 uppercase tracking-[0.2em] font-bold">Studio</p>
+<p class="text-xl font-serif leading-relaxed">123 Construction Ave, <br/> New York, NY 10001</p>
+</div>
+</div>
+<div class="flex flex-col items-start md:items-end justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 border-[0.5px] border-brand-emerald-light flex items-center justify-center">
+<span class="text-brand-emerald-light text-[10px] font-light">VC</span>
+</div>
+<div>
+<h1 class="text-white text-2xl font-serif tracking-[0.2em] uppercase">VertexCity</h1>
+</div>
+</div>
+<div class="flex gap-8 mt-12">
+<a class="text-[10px] tracking-widest uppercase hover:text-brand-emerald-light transition-colors" href="#">FB</a>
+<a class="text-[10px] tracking-widest uppercase hover:text-brand-emerald-light transition-colors" href="#">IG</a>
+<a class="text-[10px] tracking-widest uppercase hover:text-brand-emerald-light transition-colors" href="#">LI</a>
+<a class="text-[10px] tracking-widest uppercase hover:text-brand-emerald-light transition-colors" href="#">PI</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-white/30 gap-6">
+<p>© 2024 VertexCity. Distinguished Construction.</p>
+<div class="flex gap-12">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: CTAFooterSection -->
+</body></html>
