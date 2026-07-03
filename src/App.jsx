@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = ["Home", "About", "Services", "Invest", "Why Us", "Team", "Contact"];
 const heroSubtitle =
@@ -140,26 +140,6 @@ const teamLeaders = [
     quote: "Urban development works best when client trust, site discipline, and smart property strategy move together.",
     bio:
       "Chidiebere leads Vertex City Ltd. from Port Harcourt, bringing experience in real estate development, onsite coordination, customer relationship management, and operations-focused property service."
-  },
-  {
-    name: "Tari Eze",
-    role: "Head of Investments",
-    initials: "TE",
-    stat: "95%",
-    statLabel: "client-first acquisition process",
-    quote: "Every investment conversation should connect budget, timing, location, risk, and future value.",
-    bio:
-      "Tari shapes the company's investment guidance, helping buyers and investors compare opportunities, evaluate market fit, and choose property paths that match their goals."
-  },
-  {
-    name: "Nneka Briggs",
-    role: "Operations & Client Experience Lead",
-    initials: "NB",
-    stat: "End-to-end",
-    statLabel: "support from inquiry to handover",
-    quote: "The best property experience feels organized, responsive, and calm from the first call to completion.",
-    bio:
-      "Nneka coordinates client support, documentation follow-through, and post-acquisition service so every stage of the Vertex City experience stays practical and reliable."
   }
 ];
 
@@ -225,7 +205,199 @@ function LeaderPortrait({ leader, align = "right" }) {
   );
 }
 
-function Header() {
+function InspectionModal({ isOpen, onClose }) {
+  const [formData, setFormData] = useState({ name: "", phone: "", siteLocation: "" });
+  const [error, setError] = useState("");
+  const nameInputRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.setTimeout(() => nameInputRef.current?.focus(), 0);
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) {
+    return null;
+  }
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+
+    if (error) {
+      setError("");
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const name = formData.name.trim();
+    const phone = formData.phone.trim();
+    const siteLocation = formData.siteLocation.trim();
+
+    if (!name || !phone || !siteLocation) {
+      setError("Please enter your name, phone, and site location.");
+      return;
+    }
+
+    const subject = "Free site inspection request";
+    const body = [
+      "Hello Vertex City Ltd.,",
+      "",
+      "I would like to book a free site inspection.",
+      "",
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Site location: ${siteLocation}`
+    ].join("\n");
+
+    window.location.href = `mailto:info@vertexcitylimited.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-primary/70 px-3 py-3 backdrop-blur-sm sm:items-center sm:px-margin-mobile sm:py-6"
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div
+        className="my-auto flex max-h-[calc(100dvh-1.5rem)] w-full max-w-lg flex-col overflow-hidden rounded-xl bg-surface-container-lowest shadow-2xl ring-1 ring-primary-fixed-dim/50 sm:max-h-[calc(100dvh-3rem)]"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inspection-modal-title"
+      >
+        <div className="relative shrink-0 overflow-hidden bg-primary p-4 text-on-primary sm:p-6">
+          <div className="absolute inset-0 opacity-20">
+            <img
+              className="h-full w-full object-cover"
+              src={assetPath("/images/vertexcity-draft-hero2.jpg")}
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary/80" />
+          <div className="relative flex items-start justify-between gap-3 sm:gap-4">
+            <div className="min-w-0">
+              <div className="mb-3 flex items-center gap-2">
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary-container text-primary">
+                  <Icon>travel_explore</Icon>
+                </span>
+                <p className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-secondary-container sm:text-label-sm">Vertex City Ltd.</p>
+              </div>
+              <h2 id="inspection-modal-title" className="text-xl font-bold leading-tight text-on-primary sm:text-headline-md">
+                Book free site inspection
+              </h2>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-on-primary/75 sm:text-body-md">
+                Share your details and our team will review the location before your visit.
+              </p>
+            </div>
+            <button
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-on-primary transition-colors hover:bg-white/20 sm:h-10 sm:w-10"
+              type="button"
+              aria-label="Close site inspection form"
+              onClick={onClose}
+            >
+              <Icon>close</Icon>
+            </button>
+          </div>
+        </div>
+
+        <form className="space-y-3 overflow-y-auto p-4 sm:space-y-4 sm:p-6" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-3 gap-2 rounded-lg border border-outline-variant/30 bg-surface-container-low p-2 text-center">
+            {[
+              ["location_on", "Location"],
+              ["call", "Callback"],
+              ["fact_check", "Review"]
+            ].map(([icon, label]) => (
+              <div className="rounded-lg bg-white px-2 py-2 text-primary shadow-sm" key={label}>
+                <Icon className="text-xl">{icon}</Icon>
+                <p className="mt-1 text-[0.68rem] font-bold leading-tight">{label}</p>
+              </div>
+            ))}
+          </div>
+
+          <label className="block">
+            <span className="mb-1.5 block text-label-sm font-bold text-primary sm:mb-2">Name</span>
+            <input
+              ref={nameInputRef}
+              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-3.5 py-2.5 text-body-md text-on-surface outline-none transition placeholder:text-outline/70 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 sm:px-4 sm:py-3"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              autoComplete="name"
+              required
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-1.5 block text-label-sm font-bold text-primary sm:mb-2">Phone</span>
+            <input
+              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-3.5 py-2.5 text-body-md text-on-surface outline-none transition placeholder:text-outline/70 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 sm:px-4 sm:py-3"
+              name="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={handleChange}
+              autoComplete="tel"
+              required
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-1.5 block text-label-sm font-bold text-primary sm:mb-2">Site location</span>
+            <textarea
+              className="min-h-16 w-full resize-y rounded-lg border border-outline-variant/50 bg-surface px-3.5 py-2.5 text-body-md text-on-surface outline-none transition placeholder:text-outline/70 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 sm:min-h-20 sm:px-4 sm:py-3"
+              name="siteLocation"
+              value={formData.siteLocation}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          {error ? (
+            <p className="rounded-lg bg-primary/10 px-3.5 py-2.5 text-sm font-bold text-primary sm:px-4 sm:py-3 sm:text-body-md" role="alert">
+              {error}
+            </p>
+          ) : null}
+
+          <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center sm:justify-between">
+            <button
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-on-primary shadow-lg shadow-primary/15 transition-all hover:bg-primary/90 sm:w-auto sm:py-4"
+              type="submit"
+            >
+              <Icon>mail</Icon>
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function Header({ onBookInspection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -253,9 +425,14 @@ function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a className="hidden md:inline-flex bg-primary text-on-primary px-4 sm:px-6 py-2 rounded-lg font-bold hover:bg-primary/90 transition-all text-body-md" href="#contact">
-            Speak With an Advisor
-          </a>
+          <button
+            className="hidden md:inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-body-md font-bold text-on-primary transition-all hover:bg-primary/90 sm:px-6"
+            type="button"
+            onClick={onBookInspection}
+          >
+            <Icon className="text-base">event_available</Icon>
+            Book free site inspection
+          </button>
           <button
             className="inline-flex lg:hidden h-10 w-10 items-center justify-center rounded-lg border border-outline-variant/50 text-primary hover:bg-surface-container-low transition-colors"
             type="button"
@@ -285,20 +462,24 @@ function Header() {
               {link}
             </a>
           ))}
-          <a
-            className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 font-bold text-on-primary transition-colors hover:bg-primary/90"
-            href="#contact"
-            onClick={() => setIsMenuOpen(false)}
+          <button
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-bold text-on-primary transition-colors hover:bg-primary/90"
+            type="button"
+            onClick={() => {
+              setIsMenuOpen(false);
+              onBookInspection();
+            }}
           >
-            Speak With an Advisor
-          </a>
+            <Icon>event_available</Icon>
+            Book free site inspection
+          </button>
         </div>
       </nav>
     </header>
   );
 }
 
-function Hero() {
+function Hero({ onBookInspection }) {
   const [typedSubtitle, setTypedSubtitle] = useState("");
 
   useEffect(() => {
@@ -354,10 +535,14 @@ function Hero() {
               Explore Our Services
               <Icon>arrow_forward</Icon>
             </a>
-            <a className="hero-button-right bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-center" href="#contact">
-              <Icon>call</Icon>
-              Speak With an Advisor
-            </a>
+            <button
+              className="hero-button-right inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-6 py-3.5 text-center font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:px-8 sm:py-4"
+              type="button"
+              onClick={onBookInspection}
+            >
+              <Icon>event_available</Icon>
+              Book free site inspection
+            </button>
           </div>
         </div>
       </div>
@@ -626,6 +811,8 @@ function Footer() {
 }
 
 export default function App() {
+  const [isInspectionModalOpen, setIsInspectionModalOpen] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -668,9 +855,9 @@ export default function App() {
 
   return (
     <div className="bg-background text-on-background min-h-screen overflow-x-hidden" onClick={handleAnchorClick}>
-      <Header />
+      <Header onBookInspection={() => setIsInspectionModalOpen(true)} />
       <main>
-        <Hero />
+        <Hero onBookInspection={() => setIsInspectionModalOpen(true)} />
         <Services />
         <InvestmentSolutions />
         <WhyVertexCity />
@@ -679,6 +866,7 @@ export default function App() {
         <ContactCta />
       </main>
       <Footer />
+      <InspectionModal isOpen={isInspectionModalOpen} onClose={() => setIsInspectionModalOpen(false)} />
     </div>
   );
 }
